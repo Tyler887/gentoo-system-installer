@@ -7,7 +7,7 @@ commands to do the install. You also get:
 * Portage package manager
 * Several stuff from `@world`
 
-The 
+The checksum gets verified, so you don't get any security issues.
 
 ## Usage
 
