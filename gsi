@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+echo "Initiating System Installer [Version 1.0]..."
+echo "  >>> Verifying gentoo checksum..."
+function failkey {
+  dialog --defaultno --no-label "No" --yes-label "Yes (NOT RECOMMENDED)" --backtitle "System Installer 1.0 on $OSTYPE" --no-mouse --title "Stop here!" --yesno "The Gentoo keys are not good and you are most likely are either missing GnuPG or this is a fake Gentoo live CD. Are you sure you want to install an unsecure Gentoo?" 7 700 || reboot
+}
+gpg --keyserver hkps://keys.gentoo.org --recv-keys 0xBB572E0E2D182910 || failkey
